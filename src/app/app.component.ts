@@ -1,4 +1,4 @@
-import {Component, HostBinding, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, HostBinding, OnInit, Renderer2, ViewEncapsulation} from '@angular/core';
 import {Subscription} from 'rxjs';
 import {ThemeService} from '../shared/services/theme.service';
 import {OverlayContainer} from '@angular/cdk/overlay';
@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
   constructor(
     private themeService: ThemeService,
     private overlayContainer: OverlayContainer,
+    private renderer: Renderer2
   ) {
     this.cssClass = '';
   }
@@ -32,10 +33,15 @@ export class AppComponent implements OnInit {
 
   applyThemeOnOverlays(): void {
     const overlayContainerClasses = this.overlayContainer.getContainerElement().classList;
+
     const themeClassesToRemove = Array.from(this.themeService.themes);
     if (themeClassesToRemove.length) {
       overlayContainerClasses.remove(...themeClassesToRemove);
+      themeClassesToRemove.forEach(cls => {
+        this.renderer.removeClass(document.body, cls)
+      })
     }
+    this.renderer.addClass(document.body, this.cssClass)
     overlayContainerClasses.add(this.cssClass);
   }
 }

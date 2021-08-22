@@ -1,6 +1,6 @@
 import {ApplicationRef, Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
-import {ThemeInterface} from '../interfaces/theme.interface';
+import {ColorTheme, ThemeInterface} from '../interfaces/theme.interface';
 import {OverlayContainer} from '@angular/cdk/overlay';
 
 export const CONFIG_THEME: ThemeInterface = {
@@ -8,13 +8,21 @@ export const CONFIG_THEME: ThemeInterface = {
   color: 'red'
 };
 
+export const COLORS: ColorTheme[]= ['red', 'yellow']
+
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService {
 
   $theme: BehaviorSubject<ThemeInterface> = new BehaviorSubject<ThemeInterface>(CONFIG_THEME);
-  themes = ['$theme-red-light', "theme-red-dark"];
+
+  themes = [
+    'theme-red-light',
+    'theme-red-dark',
+    'theme-yellow-light',
+    'theme-yellow-dark'
+  ];
 
   constructor(
     private overlayContainer: OverlayContainer,
@@ -34,5 +42,11 @@ export class ThemeService {
     })
   }
 
+  changeColorPrimary(color: ColorTheme = undefined): void {
+    this.$theme.next({
+      ...this.$theme.value,
+      color: color ? color : this.$theme.value.color
+    })
+  }
 
 }

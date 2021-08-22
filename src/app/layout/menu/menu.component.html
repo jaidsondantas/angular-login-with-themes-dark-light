@@ -3,5 +3,13 @@
 </button>
 <mat-menu #menu="matMenu">
   <button mat-menu-item
-          (click)="themeService.changeDark()">{{!(themeService.$theme | async)?.isDark ? 'Enable Dark' : 'Disabled Dark'}}</button>
+          (click)="themeService.changeDark()">
+    {{!(themeService.$theme | async)?.isDark ? 'Enable Dark' : 'Disabled Dark'}}
+  </button>
+  <ng-container *ngFor="let color of colors">
+    <button mat-menu-item
+            (click)="themeService.changeColorPrimary(color)">
+      {{color}}
+    </button>
+  </ng-container>
 </mat-menu>

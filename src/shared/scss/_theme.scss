@@ -51,3 +51,45 @@ $theme-red-dark: mat.define-dark-theme((
   }
 }
 
+//Define theme red light
+$theme-yellow-light: mat.define-light-theme((
+  color: (
+    primary: mat.define-palette(palette.$yellow-palette),
+    accent: $accent-palette-light,
+    is-dark: true,
+    foreground: $my-light-theme-foreground,
+    background: $my-light-theme-background,
+  )
+));
+
+.theme-yellow-light {
+  @include mat.core-theme($theme-yellow-light);
+  @include custom-components-theme($theme-yellow-light);
+  @include mat.all-component-themes($theme-yellow-light);
+
+  .mat-app-background {
+    background-color: $background-light
+  }
+}
+
+//Define theme yellow dark
+$theme-yellow-dark: mat.define-dark-theme((
+  color: (
+    primary: mat.define-palette(palette.$yellow-palette),
+    accent: $accent-palette-dark,
+    is-dark: true,
+    foreground: $my-dark-theme-foreground,
+    background: $my-dark-theme-background,
+  )
+));
+
+.theme-yellow-dark {
+  @include mat.core-theme($theme-yellow-dark);
+  @include custom-components-theme($theme-yellow-dark);
+  @include mat.all-component-themes($theme-yellow-dark);
+
+  .mat-app-background {
+    background-color: $background-dark
+  }
+}
+

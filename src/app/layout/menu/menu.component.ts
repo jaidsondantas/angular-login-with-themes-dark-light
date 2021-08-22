@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {ThemeService} from '../../../shared/services/theme.service';
+import {COLORS, ThemeService} from '../../../shared/services/theme.service';
 
 @Component({
   selector: 'app-menu',
@@ -9,6 +9,7 @@ import {ThemeService} from '../../../shared/services/theme.service';
 })
 export class MenuComponent implements OnInit {
 
+  readonly colors = COLORS;
 
   constructor(
     public themeService: ThemeService
