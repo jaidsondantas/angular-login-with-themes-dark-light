@@ -1,0 +1,143 @@
+$background-light: #f2f2f2;
+$background-dark: #121212;
+
+$dark-primary-text: rgba(black, 0.87);
+$dark-secondary-text: rgba(black, 0.60);
+$dark-disabled-text: rgba(black, 0.38);
+$dark-dividers: rgba(black, 0.08);
+$dark-focused: rgba(black, 0.08);
+
+$light-primary-text: rgba(white, 0.87);
+$light-secondary-text: rgba(white, 0.60);
+$light-disabled-text: rgba(white, 0.38);
+$light-dividers: rgba(white, 0.08);
+$light-focused: rgba(white, 0.08);
+
+$light-white: white;
+$light-87-white: rgba(white, 0.87);
+$light-60-white: rgba(white, 0.60);
+$light-38-white: rgba(white, 0.38);
+$light-08-white: rgba(white, 0.08);
+
+$dark-black: black;
+$dark-87-black: rgba(black, 0.87);
+$dark-60-black: rgba(black, 0.60);
+$dark-38-black: rgba(black, 0.38);
+$dark-08-black: rgba(black, 0.08);
+
+$mat-light: (
+  100: $light-white,
+  200: $light-08-white,
+  300: $light-38-white,
+  400: $light-60-white,
+  500: $light-87-white,
+  contrast: (
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-secondary-text,
+    500: $dark-primary-text
+  )
+);
+
+$mat-dark: (
+  100: $dark-black,
+  200: $dark-08-black,
+  300: $dark-38-black,
+  400: $dark-60-black,
+  500: $dark-87-black,
+  contrast: (
+    100: $light-primary-text,
+    200: $light-primary-text,
+    300: $light-primary-text,
+    400: $light-secondary-text,
+    500: $light-primary-text
+  )
+);
+
+// Background palette for light themes.
+$my-light-theme-background: (
+  status-bar: map_get($mat-light, 300),
+  app-bar: map_get($mat-light, 100),
+  background: $background-light,
+  card: $dark-08-black,
+  card-tree: $dark-08-black,
+  dialog: $dark-08-black,
+  light: $dark-08-black,
+  disabled-button: rgba(black, 0.12),
+  raised-button: white,
+  focused-button: $dark-focused,
+  selected-button: map_get($mat-light, 300),
+  selected-disabled-button: map_get($mat-light, 400),
+  disabled-button-toggle: map_get($mat-light, 200),
+  unselected-chip: map_get($mat-light, 300),
+  disabled-list-option: map_get($mat-light, 200),
+  tooltip: map_get($mat-light, 700),
+);
+
+// Background palette for dark themes.
+$my-dark-theme-background: (
+  status-bar: black,
+  app-bar: map_get($mat-dark, 500),
+  background: $background-dark,
+  card: $light-08-white,
+  card-tree: $light-08-white,
+  dialog: $light-08-white,
+  darker: $light-08-white,
+  disabled-button: rgba(white, 0.12),
+  raised-button: map-get($mat-dark, 800),
+  focused-button: $light-focused,
+  selected-button: map_get($mat-dark, 500),
+  selected-disabled-button: map_get($mat-dark, 800),
+  disabled-button-toggle: black,
+  unselected-chip: map_get($mat-dark, 700),
+  disabled-list-option: black,
+  tooltip: map_get($mat-dark, 700),
+);
+
+
+// Foreground palette for light themes.
+$my-light-theme-foreground: (
+  base: black,
+  divider: $dark-dividers,
+  dividers: $dark-dividers,
+  disabled: $dark-disabled-text,
+  disabled-button: rgba(black, 0.26),
+  disabled-text: $dark-disabled-text,
+  elevation: black,
+  hint-text: $dark-disabled-text,
+  secondary-text: $dark-secondary-text,
+  icon: $dark-87-black,
+  icons: rgba(black, 0.54),
+  text: rgba(black, 0.87),
+  slider-min: rgba(black, 0.87),
+  slider-off: rgba(black, 0.26),
+  slider-off-active: rgba(black, 0.38),
+  text60: $dark-60-black,
+  text87: $dark-87-black,
+  text38: $dark-38-black,
+  underline: $dark-60-black
+);
+
+// Foreground palette for dark themes.
+$my-dark-theme-foreground: (
+  base: white,
+  divider: $light-dividers,
+  dividers: $light-dividers,
+  disabled: $light-disabled-text,
+  disabled-button: rgba(white, 0.3),
+  disabled-text: $light-disabled-text,
+  elevation: black,
+  hint-text: $light-disabled-text,
+  secondary-text: $light-secondary-text,
+  icon: $light-87-white,
+  icons: $light-60-white,
+  text: $light-87-white,
+  slider-min: white,
+  slider-off: rgba(white, 0.3),
+  slider-off-active: rgba(white, 0.3),
+  text60: $light-60-white,
+  text87: $light-87-white,
+  text38: $light-08-white,
+  underline: $light-60-white
+);

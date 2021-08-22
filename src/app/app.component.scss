@@ -1,0 +1,9 @@
+app-root {
+  .content {
+    padding: 16px;
+    .menu {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@use '~@angular/material' as mat;
+@use '~@angular/material/core/theming/palette';
+@import 'colors';
+@import "components";
+
+@include mat.core();
+
+//Define palettes colors accents
+$accent-palette-light: mat.define-palette($mat-light, 500, 100);
+$accent-palette-dark: mat.define-palette($mat-dark, 500, 100);
+
+//Define theme red light
+$theme-red-light: mat.define-light-theme((
+  color: (
+    primary: mat.define-palette(palette.$red-palette),
+    accent: $accent-palette-light,
+    is-dark: true,
+    foreground: $my-light-theme-foreground,
+    background: $my-light-theme-background,
+  )
+));
+
+.theme-red-light {
+  @include mat.core-theme($theme-red-light);
+  @include custom-components-theme($theme-red-light);
+  @include mat.all-component-themes($theme-red-light);
+
+  .mat-app-background {
+    background-color: $background-light
+  }
+}
+
+//Define theme red dark
+$theme-red-dark: mat.define-dark-theme((
+  color: (
+    primary: mat.define-palette(palette.$red-palette),
+    accent: $accent-palette-dark,
+    is-dark: true,
+    foreground: $my-dark-theme-foreground,
+    background: $my-dark-theme-background,
+  )
+));
+
+.theme-red-dark {
+  @include mat.core-theme($theme-red-dark);
+  @include custom-components-theme($theme-red-dark);
+  @include mat.all-component-themes($theme-red-dark);
+
+  .mat-app-background {
+    background-color: $background-dark
+  }
+}
+
