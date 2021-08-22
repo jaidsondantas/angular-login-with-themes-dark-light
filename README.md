@@ -1,27 +1,35 @@
-# AngularLoginWithThemesDarkLight
+# Angular 12 | Login with Themes Dark Light
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.2.
+    This project to be still in the development stage, when README.md is publish it will be updated
+    with installation or visualization information.  
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+    Este projeto ainda estar em fase desenvolvimento, ao seu publicado o README.md será devidamente
+    atualizado com as informações de instalação ou visualização.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+[comment]: <> (This project was generated with [Angular CLI]&#40;https://github.com/angular/angular-cli&#41; version 12.2.2.)
 
-## Build
+[comment]: <> (## Development server)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+[comment]: <> (Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.)
 
-## Running unit tests
+[comment]: <> (## Code scaffolding)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+[comment]: <> (Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.)
 
-## Running end-to-end tests
+[comment]: <> (## Build)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+[comment]: <> (Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.)
 
-## Further help
+[comment]: <> (## Running unit tests)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[comment]: <> (Run `ng test` to execute the unit tests via [Karma]&#40;https://karma-runner.github.io&#41;.)
+
+[comment]: <> (## Running end-to-end tests)
+
+[comment]: <> (Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.)
+
+[comment]: <> (## Further help)
+
+[comment]: <> (To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference]&#40;https://angular.io/cli&#41; page.)
