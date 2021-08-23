@@ -1,5 +1,7 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {COLORS, ThemeService} from '../../../shared/services/theme.service';
+import {LoginService} from '../../../shared/services/login.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -12,11 +14,17 @@ export class MenuComponent implements OnInit {
   readonly colors = COLORS;
 
   constructor(
-    public themeService: ThemeService
+    public themeService: ThemeService,
+    public loginService: LoginService,
+    private router: Router
   ) {
   }
 
   ngOnInit(): void {
+  }
+
+  exit(): void {
+    this.router.navigate(['/login']).then()
   }
 
 }

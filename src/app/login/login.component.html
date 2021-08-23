@@ -1,4 +1,36 @@
 <mat-card>
-  <span>Login</span>
+  <span class="text-login">Login</span>
+  <mat-divider class="mt-16"></mat-divider>
+  <form class="form" [formGroup]="form" novalidate>
+    <ng-container>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+        <mat-icon matSuffix class="secondary-text">mail</mat-icon>
+        <mat-error *ngIf="form.get('email')?.hasError('required')">
+          Email is required
+        </mat-error>
+        <mat-error *ngIf="
+      !form.get('email')?.hasError('required') &&
+      form.get('email')?.hasError('email')">
+          Enter a valid email address.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password">
+        <mat-icon matSuffix class="secondary-text">vpn_key</mat-icon>
+        <mat-error>
+          Password is required
+        </mat-error>
+      </mat-form-field>
+    </ng-container>
+    <mat-error *ngIf="error">{{error}}</mat-error>
+    <div class="mt-16 flex-center-row-column">
+      <button (click)="login()" *ngIf="!loading" class="w-100-p" mat-flat-button color="primary">LOGIN</button>
+      <mat-spinner [diameter]="30" *ngIf="loading"></mat-spinner>
+    </div>
 
+
+  </form>
 </mat-card>

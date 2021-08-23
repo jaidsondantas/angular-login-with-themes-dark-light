@@ -6,4 +6,25 @@ app-login {
   align-self: auto;
   justify-content: center;
   align-items: center;
+
+  .mat-card {
+    width: 400px;
+    .form {
+      display: flex;
+      flex-direction: column;
+      margin-top: 16px;
+    }
+  }
+
+  .mat-card .mat-divider-horizontal {
+    position: relative;
+  }
+
+  .text-login {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+
 }

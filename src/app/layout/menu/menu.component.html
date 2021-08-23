@@ -12,4 +12,8 @@
       {{color}}
     </button>
   </ng-container>
+  <button mat-menu-item
+          (click)="loginService.removeToken(); exit()">
+    Exit
+  </button>
 </mat-menu>
