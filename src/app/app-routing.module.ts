@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./dash/dash.module').then(m => m.DashModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'login'
   }
 ];
 

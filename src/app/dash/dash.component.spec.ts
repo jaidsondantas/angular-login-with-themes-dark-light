@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DashComponent } from './dash.component';
+import {LoginService} from '../../shared/services/login.service';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('DashComponent', () => {
   let component: DashComponent;
@@ -8,7 +10,9 @@ describe('DashComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DashComponent ]
+      imports:[HttpClientTestingModule],
+      declarations: [ DashComponent ],
+      providers: [LoginService]
     })
     .compileComponents();
   });

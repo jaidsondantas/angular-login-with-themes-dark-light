@@ -44,7 +44,7 @@ $theme-red-dark: mat.define-dark-theme((
 .theme-red-dark {
   @include mat.core-theme($theme-red-dark);
   @include custom-components-theme($theme-red-dark);
-  @include mat.all-component-themes($theme-red-dark);
+  @include mat.all-component-colors($theme-red-dark);
 
   .mat-app-background {
     background-color: $background-dark
@@ -65,7 +65,7 @@ $theme-yellow-light: mat.define-light-theme((
 .theme-yellow-light {
   @include mat.core-theme($theme-yellow-light);
   @include custom-components-theme($theme-yellow-light);
-  @include mat.all-component-themes($theme-yellow-light);
+  @include mat.all-component-colors($theme-yellow-light);
 
   .mat-app-background {
     background-color: $background-light
@@ -86,7 +86,7 @@ $theme-yellow-dark: mat.define-dark-theme((
 .theme-yellow-dark {
   @include mat.core-theme($theme-yellow-dark);
   @include custom-components-theme($theme-yellow-dark);
-  @include mat.all-component-themes($theme-yellow-dark);
+  @include mat.all-component-colors($theme-yellow-dark);
 
   .mat-app-background {
     background-color: $background-dark

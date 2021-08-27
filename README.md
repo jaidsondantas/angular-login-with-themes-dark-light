@@ -7,29 +7,38 @@
     Este projeto ainda estar em fase desenvolvimento, ao seu publicado o README.md será devidamente
     atualizado com as informações de instalação ou visualização.
 
+## Install and run | Instalação e rodar
 
-[comment]: <> (This project was generated with [Angular CLI]&#40;https://github.com/angular/angular-cli&#41; version 12.2.2.)
+To perform the installation it is necessary to have the node installed with version > 14. <br/>
+To login it is necessary to use the
+<a href="https://github.com/jaidsondantas/api-login-with-prisma-docker-mysql"> api-login-with-prisma-docker-mysql </a>,
+just follow the project installation.
 
-[comment]: <> (## Development server)
+Para realizar a instação é necessário ter o node instalado com versão > 14. <br/>
+Para fazer o login é necessário utilizar a 
+<a href="https://github.com/jaidsondantas/api-login-with-prisma-docker-mysql"> api-login-with-prisma-docker-mysql </a>, 
+basta seguir a instalação do projeto.
 
-[comment]: <> (Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.)
 
-[comment]: <> (## Code scaffolding)
+```bash
+$ npm install
+$ ng serve
+```
 
-[comment]: <> (Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.)
+## Functionalities | Funcionalidades
 
-[comment]: <> (## Build)
+Simple project, only with a basic demo of login. using Angular 12, implemented theme options,
+both in primary colors and themes dark and light. Use of services with conection in api REST.
+Custom themes material.
 
-[comment]: <> (Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.)
+Projeto simples, somente com uma demonstração básica de login, utilizando Angular 12,
+implementado opção de temas, tanto em cores primarias e como dark e light. Ultilização de 
+serviços com conexão em api REST. Customização de temas do material.
 
-[comment]: <> (## Running unit tests)
+## Login
+To login to use data access <br/>
+Para login utitlizar dados
 
-[comment]: <> (Run `ng test` to execute the unit tests via [Karma]&#40;https://karma-runner.github.io&#41;.)
-
-[comment]: <> (## Running end-to-end tests)
-
-[comment]: <> (Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.)
-
-[comment]: <> (## Further help)
-
-[comment]: <> (To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference]&#40;https://angular.io/cli&#41; page.)
+    email: usuarioteste@gmail.com
+    pass: 123
+    
