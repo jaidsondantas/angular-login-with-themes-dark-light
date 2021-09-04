@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./menu.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent {
 
   readonly colors = COLORS;
 
@@ -18,9 +18,6 @@ export class MenuComponent implements OnInit {
     public loginService: LoginService,
     private router: Router
   ) {
-  }
-
-  ngOnInit(): void {
   }
 
   exit(): void {

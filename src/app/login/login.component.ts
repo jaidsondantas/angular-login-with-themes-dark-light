@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {LoginService} from '../../shared/services/login.service';
 import {DashService} from '../dash/dash.service';
@@ -9,7 +9,7 @@ import {DashService} from '../dash/dash.service';
   styleUrls: ['./login.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
   form: FormGroup
   loading: boolean = false;
@@ -26,9 +26,6 @@ export class LoginComponent implements OnInit {
         password: ['123', [Validators.required]]
       }
     )
-  }
-
-  ngOnInit(): void {
   }
 
   login(): void {

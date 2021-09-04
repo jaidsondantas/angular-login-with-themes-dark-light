@@ -1,5 +1,4 @@
 import {Component, HostBinding, OnInit, Renderer2, ViewEncapsulation} from '@angular/core';
-import {Subscription} from 'rxjs';
 import {ThemeService} from '../shared/services/theme.service';
 import {OverlayContainer} from '@angular/cdk/overlay';
 
@@ -13,19 +12,18 @@ export class AppComponent implements OnInit {
 
   @HostBinding('class') public cssClass: string;
   title = 'angular-login-with-themes-dark-light';
-  themingSubscription: Subscription = new Subscription();
 
   constructor(
     private themeService: ThemeService,
     private overlayContainer: OverlayContainer,
     private renderer: Renderer2
   ) {
-    this.cssClass = '';
+    this.cssClass = 'dark-theme';
   }
 
 
   ngOnInit(): void {
-    this.themingSubscription = this.themeService.$theme.subscribe(_ => {
+    this.themeService.$theme.subscribe(_ => {
       this.cssClass = this.themeService.getTheme();
       this.applyThemeOnOverlays();
     });
@@ -33,7 +31,6 @@ export class AppComponent implements OnInit {
 
   applyThemeOnOverlays(): void {
     const overlayContainerClasses = this.overlayContainer.getContainerElement().classList;
-
     const themeClassesToRemove = Array.from(this.themeService.themes);
     if (themeClassesToRemove.length) {
       overlayContainerClasses.remove(...themeClassesToRemove);
