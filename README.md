@@ -35,6 +35,13 @@ Projeto simples, somente com uma demonstração básica de login, utilizando Ang
 implementado opção de temas, tanto em cores primarias e como dark e light. Ultilização de 
 serviços com conexão em api REST. Customização de temas do material.
 
+## Tecnologies | Tecnologias
+****
+`Angular 12`<br/>
+`Angular Material - Dark and Light`<br/>
+`REST full`<br/>
+`Unit Test with Jasmine. 79,8% Covarage.`<br/>
+
 ## Login
 To login to use data access <br/>
 Para login utitlizar dados
