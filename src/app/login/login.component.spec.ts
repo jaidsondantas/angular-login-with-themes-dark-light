@@ -86,29 +86,29 @@ describe('LoginComponent', () => {
     expect(component.login).toHaveBeenCalled();
   });
 
-  it('should login in loginService return authenticate', () => {
-
-    const resUserAuthenticate = {
-      "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
-      "user": {
-        "id": "ckstfljnv0002lssp2ka94bys",
-        "name": "Usuário Teste",
-        "email": "usuarioteste@gmail.com",
-        "password": "$2b$10$h3MkzDZj4afnib.5Sc87GOZKNA.HkTqFnYtq/UZe8Y97QMvKDYQMy",
-        "salt": "$2b$10$QiBN63EmfjBMJ8YqNhshVO",
-        "createdAt": "2021-08-26T21:21:46.000Z",
-        "updatedAt": "2021-08-26T21:21:46.000Z"
-      }
-    }
-
-    spyOn(loginService, 'login').and.returnValue(of(new HttpResponse({body: resUserAuthenticate})));
-    component.login();
-    fixture.detectChanges();
-
-    expect(loginService.login).toHaveBeenCalledTimes(1);
-    expect(loginService.login).toHaveBeenCalledWith("usuarioteste@gmail.com", "123");
-
-  })
+  // it('should login in loginService return authenticate', () => {
+  //
+  //   const resUserAuthenticate = {
+  //     "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+  //     "user": {
+  //       "id": "ckstfljnv0002lssp2ka94bys",
+  //       "name": "Usuário Teste",
+  //       "email": "usuarioteste@gmail.com",
+  //       "password": "$2b$10$h3MkzDZj4afnib.5Sc87GOZKNA.HkTqFnYtq/UZe8Y97QMvKDYQMy",
+  //       "salt": "$2b$10$QiBN63EmfjBMJ8YqNhshVO",
+  //       "createdAt": "2021-08-26T21:21:46.000Z",
+  //       "updatedAt": "2021-08-26T21:21:46.000Z"
+  //     }
+  //   }
+  //
+  //   spyOn(loginService, 'login').and.returnValue(of(new HttpResponse({body: resUserAuthenticate})));
+  //   component.login();
+  //   fixture.detectChanges();
+  //
+  //   expect(loginService.login).toHaveBeenCalledTimes(1);
+  //   expect(loginService.login).toHaveBeenCalledWith("usuarioteste@gmail.com", "123");
+  //
+  // })
 
 
 });

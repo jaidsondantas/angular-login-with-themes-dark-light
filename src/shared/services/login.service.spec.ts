@@ -1,14 +1,14 @@
-import {getTestBed, TestBed} from '@angular/core/testing';
+import {getTestBed, TestBed, waitForAsync} from '@angular/core/testing';
 
 import {LoginService} from './login.service';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import {RouterTestingModule} from '@angular/router/testing';
-import {Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 
 export class MockLoginService {
   login(email: string, password: string): Observable<any> {
-    return new Observable<any>();
+    return of({usuario: 'Jaidson'});
   }
 
   removeToken(): void {
@@ -22,6 +22,7 @@ export class MockLoginService {
 
 
 describe('LoginService', () => {
+
   let injector: TestBed;
   let service: LoginService;
   let httpClient: HttpClient;
@@ -38,6 +39,7 @@ describe('LoginService', () => {
         httpMock = injector.inject(HttpTestingController);
         service = injector.inject(LoginService);
       });
+
   });
 
   it('should init service', () => {
@@ -47,34 +49,38 @@ describe('LoginService', () => {
 
   it("should insert token in localStorage", () => {
     const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
-    spyOn(service, 'setToken');
     service.setToken(token);
-    service.setToken(token);
-    service.setToken(token);
-    expect(service.setToken).toHaveBeenCalledTimes(3);
-    expect(localStorage.getItem('accessToken')).toEqual(token);
-  })
-  //
-  // it("should return getToken in localStorage", () => {
-  //   const token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
-  //   spyOn(service, 'getToken').and.returnValue(token);
-  //
-  //   service.setToken(token);
-  //
-  //   const tokenLocal = service.getToken();
-  //   expect(service.getToken()).toEqual(token)
-  // })
-  //
-  // it("should insert removeToken in localStorage", () => {
-  //   service.removeToken();
-  //
-  //   expect(service.removeToken).toHaveBeenCalledTimes(1);
-  // });
+    expect(service.getToken()).toBe('Bearer ' + token);
+  });
 
 
-  // let service: LoginService;
+  it("should return getToken in localStorage", () => {
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
+    service.setToken(token);
+    expect(service.getToken()).toBe('Bearer ' + token)
+  });
 
-  // it('should be created', () => {
-  //   expect(service).toBeTruthy();
-  // });
+  it("should removeToken in localStorage", () => {
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
+    service.setToken(token);
+    expect(service.getToken()).toBe('Bearer ' + token);
+    service.removeToken();
+    expect(localStorage.getItem('accessToken')).toBeNull();
+  });
+
+  it("should insert user in localstorage", () => {
+    const user = {
+      id: 1,
+      user: 'Jaidson'
+    };
+    service.setUser(user);
+    expect(user).toEqual(jasmine.objectContaining(service.getUser()));
+  });
+
+
+  it('test should wait for ValueService.getObservableValue', waitForAsync(() => {
+    spyOn(LoginService.prototype, 'login').and.callThrough();
+    service.login('jaidsondantas@gmail.com', '123');
+    expect(LoginService.prototype.login).toHaveBeenCalledWith('jaidsondantas@gmail.com', '123')
+  }));
 });
